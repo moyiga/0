@@ -3,22 +3,517 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>友嘉科技服务中心</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css" rel="stylesheet">
+    <title>友嘉共享电脑 - 高端设备租赁专家</title>
+    <style>
+        :root {
+            --quantum-blue: #0a1f3d;
+            --neon-green: #00ff9d;
+            --cyber-purple: #6c43f5;
+            --tech-gray: #f0f4f8;
+        }
+
+        body {
+            background: var(--tech-gray);
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 动态头部 */
+        .hero {
+            background: linear-gradient(135deg, var(--quantum-blue) 0%, #122b4f 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(108,67,245,0.1) 20px,
+                rgba(108,67,245,0.1) 40px
+            );
+            animation: hologram 20s linear infinite;
+        }
+
+        /* 核心优势卡片 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .tech-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 30px rgba(10,31,61,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--cyber-purple);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(108,67,245,0.2);
+        }
+
+        /* 配置表格 */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .spec-table th {
+            background: var(--quantum-blue);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .spec-table td {
+            padding: 1.2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* 企业服务区块 */
+        .enterprise-block {
+            background: linear-gradient(135deg, #122b4f 0%, var(--quantum-blue) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        @keyframes hologram {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <div id="particles-js"></div>
-    
-    <div class="lang-switcher">
-        <button class="lang-btn active" onclick="changeLanguage('zh-CN')">简体</button>
-        <button class="lang-btn" onclick="changeLanguage('en')">English</button>
-        <button class="lang-btn" onclick="changeLanguage('zh-TW')">繁體</button>
+    <div class="container">
+        <!-- 动态头部 -->
+        <section class="hero">
+            <h1 style="font-size: 2.8em; margin-bottom: 1rem;">
+                <span style="color: var(--neon-green);">免押金 免焦虑</span><br>
+                友嘉共享电脑
+            </h1>
+            <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+                <div style="padding: 0.8rem 2rem; background: var(--neon-green); color: var(--quantum-blue); border-radius: 30px;">
+                    🚀 30分钟极速上门
+                </div>
+                <div style="padding: 0.8rem 2rem; border: 2px solid var(--neon-green); border-radius: 30px;">
+                    🔒 军用级数据清除
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心服务 -->
+        <div class="card-grid">
+            <div class="tech-card">
+                <h3 style="color: var(--cyber-purple);">💻 极致性能配置</h3>
+                <ul>
+                    <li>毫秒级响应速度</li>
+                    <li>预装专业软件套件</li>
+                    <li>多屏扩展工作站方案</li>
+                </ul>
+            </div>
+            
+            <div class="tech-card">
+                <h3 style="color: var(--cyber-purple);">🛡️ 安全保障体系</h3>
+                <ul>
+                    <li>三重设备定位追踪</li>
+                    <li>远程一键锁机功能</li>
+                    <li>数据自毁认证系统</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 配置参数 -->
+        <section>
+            <h2 style="color: var(--quantum-blue); margin: 3rem 0 2rem;">
+                ⚡ 发烧级硬件配置
+            </h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">组件类别</th>
+                    <th>电竞旗舰版</th>
+                    <th>设计师尊享版</th>
+                    <th>超算工作站</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 显示器 -->
+                <tr>
+                    <td>📺 电竞显示器</td>
+                    <td>
+                        <div class="badge ultra-badge">超薄1.5mm边框</div>
+                        <ul>
+                            <li>32" 4K Nano-IPS</li>
+                            <li>240Hz刷新率/1ms响应</li>
+                            <li>HDR1000认证</li>
+                            <li>量子点背光技术</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="badge ultra-badge">6K视网膜屏</div>
+                        <ul>
+                            <li>27" 6K Mini-LED</li>
+                            <li>98% DCI-P3色域</li>
+                            <li>Delta E < 1</li>
+                            <li>Pantone认证</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="badge ultra-badge">三联屏方案</div>
+                        <ul>
+                            <li>3×32" 4K IPS</li>
+                            <li>100% sRGB覆盖</li>
+                            <li>多屏色彩校准</li>
+                            <li>可调支架系统</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <!-- 外设套装 -->
+                <tr style="background: #f8f9fa;">
+                    <td>⌨️ 电竞外设套装</td>
+                    <td colspan="3">
+                        <div class="badge rgb-badge">1680万色RGB光效</div>
+                        <div style="columns: 3; gap: 2rem;">
+                            <div>
+                                <h4>机械键盘</h4>
+                                <ul>
+                                    <li>CHERRY MX 银轴</li>
+                                    <li>全铝机身</li>
+                                    <li>PBT双色键帽</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>激光鼠标</h4>
+                                <ul>
+                                    <li>26000DPI传感器</li>
+                                    <li>8向滚轮设计</li>
+                                    <li>零延迟无线技术</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>震动耳机</h4>
+                                <ul>
+                                    <li>7.1虚拟环绕声</li>
+                                    <li>50mm钕磁单元</li>
+                                    <li>AI降噪麦克风</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- 散热系统 -->
+                <tr>
+                    <td>❄️ 散热方案</td>
+                    <td>
+                        <div class="badge cooling-badge">240mm水冷</div>
+                        <ul>
+                            <li>双腔体水泵设计</li>
+                            <li>≤28dB静音运行</li>
+                            <li>RGB冷头显示屏</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="badge cooling-badge">360mm水冷</div>
+                        <ul>
+                            <li>三明治冷排结构</li>
+                            <li>智能温控系统</li>
+                            <li>石墨烯导热涂层</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="badge cooling-badge">分体式水冷</div>
+                        <ul>
+                            <li>双D5水泵系统</li>
+                            <li>硬管RGB水道</li>
+                            <li>流量温度监控</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <!-- 核心硬件 -->
+                <tr style="background: #f8f9fa;">
+                    <td>⚙️ 核心组件</td>
+                    <td>
+                        <ul>
+                            <li>i9-14900KS 6.2GHz</li>
+                            <li>RTX 4090 24GB</li>
+                            <li>64GB DDR5 7200MHz</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Ryzen 9 7950X3D</li>
+                            <li>RTX 6000 Ada</li>
+                            <li>128GB DDR5 ECC</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Threadripper PRO 5995WX</li>
+                            <li>双RTX 6000 Ada</li>
+                            <li>256GB DDR5 ECC</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+            </table>
+        </section>
+
+        <!-- 企业服务 -->
+        <section class="enterprise-block">
+            <h2 style="margin-bottom: 2rem;">🏢 企业专属权益</h2>
+            <div style="columns: 2; gap: 3rem;">
+                <div>
+                    <h3>基础特权</h3>
+                    <ul>
+                        <li>✔ 10台起享IT驻场</li>
+                        <li>✔ 月结60天账期</li>
+                        <li>✔ 批量设备管理</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>增值服务</h3>
+                    <ul>
+                        <li>✔ 定制软件预装</li>
+                        <li>✔ 数据安全审计</li>
+                        <li>✔ 备用设备支持</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服务保障 -->
+        <section style="background: rgba(108,67,245,0.05); padding: 2rem; border-radius: 15px;">
+            <div style="columns: 2; gap: 3rem;">
+                <div>
+                    <h3 style="color: var(--quantum-blue);">📜 租赁条款</h3>
+                    <ul>
+                        <li>7天免罚金宽限期</li>
+                        <li>设备原价赔偿标准</li>
+                        <li>双向物流支持</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--quantum-blue);">⚖️ 责任说明</h3>
+                    <ul>
+                        <li>设备故障免费维修</li>
+                        <li>承租人日常维护义务</li>
+                        <li>法律争议解决方案</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div style="text-align: center; margin: 4rem 0;">
+            <div style="font-size: 1.5rem; color: var(--quantum-blue); margin-bottom: 1.5rem;">
+                🎁 推荐有礼：成功推荐享免租红包
+            </div>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="https://www.helloimg.com/i/2025/02/09/67a7fb3800db1.png" 
+                   style="display: inline-block;
+                          background: var(--cyber-purple);
+                          color: white;
+                          padding: 1rem 3rem;
+                          border: none;
+                          border-radius: 30px;
+                          font-size: 1.1rem;
+                          cursor: pointer;
+                          text-decoration: none;">
+                    📱 扫码立即租赁
+                </a>
+                <a href="https://www.helloimg.com/i/2025/02/09/67a7fb3800db1.png" 
+                   style="display: inline-block;
+                          background: var(--neon-green);
+                          color: var(--quantum-blue);
+                          padding: 1rem 3rem;
+                          border: none;
+                          border-radius: 30px;
+                          font-size: 1.1rem;
+                          cursor: pointer;
+                          text-decoration: none;">
+                    📞 获取专属优惠
+                </a>
+            </div>
+            <div style="margin-top: 2rem; color: #666; font-size: 0.9rem;">
+                * 遵守当地法律法规，严禁加密货币相关违规使用
+            </div>
+    <title>友嘉共享科技服务</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e6e6e6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00b4d8, #90e0ef);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(144,224,239,0.3);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,180,216,0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5em;
+            color: #00b4d8;
+            margin-bottom: 20px;
+        }
+
+        .contact-bar {
+            background: rgba(0,180,216,0.1);
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .phone {
+            font-size: 2em;
+            letter-spacing: 2px;
+            margin: 20px 0;
+            color: #90e0ef;
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #e63946;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            .phone {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="badge">24小时服务</span>
+            <h1>友嘉共享科技服务</h1>
+            <p>专业科技解决方案提供商</p>
+        </div>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-laptop-medical service-icon"></i>
+                <h3>电脑手机维修</h3>
+                <p>专业快速维修，数据安全保障</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-video service-icon"></i>
+                <h3>监控投影功放</h3>
+                <p>智能影音系统设计与安装</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-lock service-icon"></i>
+                <h3>智能锁具安装</h3>
+                <p>智能安防解决方案</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-network-wired service-icon"></i>
+                <h3>弱电工程</h3>
+                <p>专业施工与设计方案</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-print service-icon"></i>
+                <h3>办公设备维护</h3>
+                <p>打印复印设备及耗材供应</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-satellite-dish service-icon"></i>
+                <h3>远程服务</h3>
+                <p>远程维修与技术评测</p>
+            </div>
+        </div>
+
+        <div class="contact-bar">
+            <h2>立即获取专业服务</h2>
+            <div class="phone">155 3808 1208</div>
+            <p>微信同号 | 全年无休服务</p>
+        </div>
     </div>
-
-    <!-- 原有所有HTML内容保持不变 -->
-
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="/assets/js/main.js"></script>
 </body>
 </html>
