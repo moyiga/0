@@ -1,384 +1,70 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>友嘉科技服务中心</title>
-    <link href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #00f7ff;
-            --secondary-color: #6c5ce7;
-            --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            --neon-shadow: 0 0 15px rgba(0, 247, 255, 0.5);
-            --section-spacing: 120px;
-        }
+友嘉共享科技服务中心
+超高端卓越性能设备
+24小时服务全年无休服务
+全国2000+认证工程师实时待命
+最强团队永久维修服务
+全是业界十年从业经验精英大佬
+专业工程施工与设计方案
+远程技术支持服务与评测
+专业解决各种疑难杂症
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
-        }
+军用级数据清除 
+数据自毁认证系统
+敏感数据，安全自毁，防止泄漏。
+确保您的数据安全无忧。
 
-        body {
-            background: var(--bg-gradient);
-            color: #ffffff;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
+毫秒级响应速度
+体验极限操作，提升工作效率。
 
-        /* 语言切换 */
-        .lang-switcher {
-            position: fixed;
-            top: 30px;
-            right: 50px;
-            z-index: 1000;
-            display: flex;
-            gap: 12px;
-        }
+多屏扩展工作站方案
+支持多屏幕，提升工作体验。
 
-        .lang-btn {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s;
-            backdrop-filter: blur(5px);
-        }
+防盗防丢三重设备定位追踪
+多重保障，实时掌控设备位置。
+远程一键锁机远程监视
+确保设备安全
 
-        .lang-btn.active {
-            background: var(--primary-color);
-            color: #000;
-        }
+个人专属权益
+免押金 免焦虑
+7天免罚金宽限期
+设备故障免费维修
+快速响应，30分钟内上门服务。
+推荐有礼：成功推荐享免租红包
 
-        /* 粒子背景 */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
+企业专属权益
+10台起享IT驻场
+月结60天账期
+灵活账期，缓解企业资金压力
+增值服务
+定制软件预装
+根据需求，满足多种专业需求
+备用设备支持
+提供备用设备，保障工作连续性
 
-        /* 主标题区 */
-        .hero {
-            text-align: center;
-            padding: 180px 20px 150px;
-            position: relative;
-        }
+桌面操作系统
+PC端
+Windows
+Mac
+Linux
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(0,247,255,0.2) 0%, transparent 70%);
-        }
+移动端操作系统
+安卓 Android
+苹果 IOS
 
-        .hero h1 {
-            font-size: 4.5em;
-            background: linear-gradient(45deg, #00f7ff, #6c5ce7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 30px;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
+业务范围与设备列表
+AR VR WIFI
+XBOX WUII PS
+路由器 OPENWRT
+电脑 平板 手机
+打印 复印 维保
+监控摄像头安防
+投影 影响 功放
+智能锁 智能家具
+AI机器人 机顶盒
+LED屏/单色多彩
+打印复印配件耗材供应
 
-        /* 内容区块 */
-        .section {
-            padding: var(--section-spacing) 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.8em;
-            text-align: center;
-            margin-bottom: 80px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 20px auto;
-            box-shadow: var(--neon-shadow);
-        }
-
-        /* 卡片布局 */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            padding: 20px;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(0, 247, 255, 0.3);
-            border-radius: 20px;
-            padding: 40px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(0,247,255,0.1), transparent);
-            transform: rotate(45deg);
-        }
-
-        .card:hover {
-            transform: translateY(-15px) rotateX(10deg);
-            box-shadow: 0 25px 40px rgba(0,0,0,0.3),
-                        var(--neon-shadow);
-        }
-
-        /* 硬件配置表 */
-        .spec-table {
-            background: rgba(0,0,0,0.3);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            border: 1px solid rgba(0,247,255,0.2);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(5px);
-        }
-
-        th, td {
-            padding: 18px;
-            border-bottom: 1px solid rgba(0,247,255,0.1);
-            text-align: left;
-        }
-
-        th {
-            background: linear-gradient(45deg, rgba(0,247,255,0.2), rgba(108,92,231,0.2));
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        tr:hover {
-            background: rgba(0,247,255,0.03);
-        }
-
-        /* 页脚备案 */
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid rgba(0,247,255,0.2);
-            margin-top: 100px;
-        }
-
-        .copyright {
-            font-size: 0.9em;
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8em; }
-            .section-title { font-size: 2em; }
-            .card-grid { grid-template-columns: 1fr; }
-            .lang-switcher { top: 20px; right: 20px; }
-            table { display: block; overflow-x: auto; }
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 10px rgba(0,247,255,0.3); }
-            to { text-shadow: 0 0 30px rgba(0,247,255,0.6); }
-        }
-    </style>
-</head>
-<body>
-    <div id="particles-js"></div>
-    
-    <div class="lang-switcher">
-        <button class="lang-btn active" onclick="changeLanguage('zh-CN')">简体</button>
-        <button class="lang-btn" onclick="changeLanguage('en')">English</button>
-        <button class="lang-btn" onclick="changeLanguage('zh-TW')">繁體</button>
-    </div>
-
-    <section class="hero">
-        <h1 data-i18n="title">友嘉共享科技服务中心</h1>
-        <p data-i18n="slogan">超高端卓越性能设备 · 24小时全年无休服务</p>
-    </section>
-
-    <!-- 核心服务区块 -->
-    <section class="section">
-        <h2 class="section-title" data-i18n="coreServices">核心服务优势</h2>
-        <div class="card-grid">
-            <!-- 原有服务卡片... -->
-        </div>
-    </section>
-
-    <!-- 新增硬件配置 -->
-    <section class="section">
-        <h2 class="section-title" data-i18n="gamingPc">2025旗舰电竞主机</h2>
-        <div class="spec-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th data-i18n="component">组件</th>
-                        <th data-i18n="model">型号规格</th>
-                        <th data-i18n="parameters">技术参数</th>
-                        <th data-i18n="performance">性能指标</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>CPU</td>
-                        <td>AMD Ryzen 9 10980X3D (2025)</td>
-                        <td>24核/5.8GHz/280W/5nm工艺</td>
-                        <td>鲁大师: 1,580,000</td>
-                    </tr>
-                    <tr>
-                        <td>GPU</td>
-                        <td>NVIDIA RTX 6090 Ti</td>
-                        <td>48GB GDDR7/核心2685MHz/600W</td>
-                        <td>3DMark: 42,850</td>
-                    </tr>
-                    <!-- 更多配置行... -->
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title" data-i18n="workstation">双路工作站</h2>
-        <div class="spec-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th data-i18n="component">组件</th>
-                        <th data-i18n="model">型号规格</th>
-                        <th data-i18n="parameters">技术参数</th>
-                        <th data-i18n="certification">认证标准</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>CPU</td>
-                        <td>Intel Xeon Platinum 9595×2</td>
-                        <td>128核/4.5GHz/350W/10nm</td>
-                        <td>ISO-9001:2025</td>
-                    </tr>
-                    <tr>
-                        <td>内存</td>
-                        <td>美光DDR5-6400 2TB</td>
-                        <td>八通道/CL36/ECC纠错</td>
-                        <td>JEDEC标准</td>
-                    </tr>
-                    <!-- 更多配置行... -->
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <footer>
-        <div class="copyright">
-            <p>©2025 友嘉科技 豫ICP备20258888号-12</p>
-            <p>豫公网安备 41010902002097号</p>
-            <p data-i18n="compliance">符合GB/T 35273-2025信息安全规范</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // 粒子动画
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80 },
-                color: { value: '#00f7ff' },
-                size: { value: 3 },
-                move: { speed: 1.5 }
-            },
-            interactivity: {
-                events: {
-                    onhover: { enable: true, mode: 'repulse' }
-                }
-            }
-        });
-
-        // 多语言支持
-        const translations = {
-            'zh-CN': {
-                // 原有翻译...
-                gamingPc: '2025旗舰电竞主机',
-                workstation: '双路服务器工作站',
-                component: '组件',
-                model: '型号规格',
-                parameters: '技术参数',
-                performance: '性能指标',
-                certification: '认证标准',
-                compliance: '符合GB/T 35273-2025信息安全规范'
-            },
-            'en': {
-                // 原有翻译...
-                gamingPc: '2025 Gaming PC',
-                workstation: 'Dual Workstation',
-                component: 'Component',
-                model: 'Model',
-                parameters: 'Specifications',
-                performance: 'Performance',
-                certification: 'Certification',
-                compliance: 'Compliant with GB/T 35273-2025'
-            },
-            'zh-TW': {
-                // 原有翻译...
-                gamingPc: '2025旗艦電競主機',
-                workstation: '雙路工作站',
-                component: '組件',
-                model: '型號規格',
-                parameters: '技術參數',
-                performance: '性能指標',
-                certification: '認證標準',
-                compliance: '符合GB/T 35273-2025信息安全規範'
-            }
-        };
-
-        function changeLanguage(lang) {
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                el.innerHTML = translations[lang][key] || el.innerHTML;
-            });
-        }
-
-        // 3D卡片交互
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                card.style.transform = `
-                    perspective(1000px)
-                    rotateX(${(e.clientY - rect.top - rect.height/2)/20}deg)
-                    rotateY(${-(e.clientX - rect.left - rect.width/2)/20}deg)
-                `;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'none';
-            });
-        });
-    </script>
-</body>
-</html>
+立即预定享优惠
+扫码或长按此二维码加微信客户
+微信号:Bzn958
+客户电话:15538081208
